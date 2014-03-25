@@ -38,8 +38,8 @@
             </feature>
         </config-file>
 
-        <header-file src="src/ios/RBEWeservice.h" />
-        <source-file src="src/ios/RBEWeservice.m" />
+        <header-file src="src/ios/RBEWebservice.h" />
+        <source-file src="src/ios/RBEWebservice.m" />
     </platform>
     
     <!-- wp7
