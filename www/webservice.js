@@ -1,6 +1,6 @@
 window.RBEWebservice = function (str, callback){
     
-    return cordova.exec(callback, function(err) { callback('Nothing to echo.');
+    cordova.exec(callback, function(err) { callback('Nothing to echo.');
                         }, "RBEWebservice", "webservice", [str]);
     
     /*
