@@ -23,3 +23,5 @@ var RBEWebservice = {
     }
 };
 
+module.exports = RBEWebservice;
+

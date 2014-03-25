@@ -9,8 +9,7 @@
     <description>Read and Update data to file .json</description>
     <author> Ponto Sistemas </author>
     <license>Apache 2.0</license>
-    <keywords>cordova,network,information</keywords>
-    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git</repo>
+    <repo>https://github.com/negherbon/mobile-rbe-plugin-webservice.git</repo>
     
     <!-- Copiar o js para o projeto que instalar o plugin -->
     <js-module src="www/webservice.js" name="RBEWebservice">
