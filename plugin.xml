@@ -21,7 +21,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RBEWebservice">
-                <param name="android-package" value="br.com.pontosistemas.RBEWebservice.RBEWebservice"/>
+                <param name="android-package" value="br.com.pontosistemas.rbe.RBEWebservice"/>
             </feature>
         </config-file>
         
