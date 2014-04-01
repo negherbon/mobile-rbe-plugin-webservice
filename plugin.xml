@@ -17,7 +17,7 @@
     </js-module>-->
     
 
-    <!-- android
+    <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RBEWebservice">
@@ -27,7 +27,7 @@
         
         <source-file src="src/android/RBEWeservice.java" target-dir="br/com/pontosistemas/RBEWeservice" />
         
-    </platform>-->
+    </platform>
     
     <!-- ios -->
     <platform name="ios">
