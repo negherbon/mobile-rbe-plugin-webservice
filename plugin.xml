@@ -11,9 +11,6 @@
     <license>Apache 2.0</license>
     <repo>https://github.com/negherbon/mobile-rbe-plugin-webservice.git</repo>
     
-    
-    <asset src="www/webservice.js" target="js/webservice.js" />
-    
     <!-- Copiar o js para o projeto que instalar o plugin
     <js-module src="www/webservice.js" name="RBEWebservice">
         <clobbers target="webservice" />
