@@ -25,7 +25,7 @@
             </feature>
         </config-file>
         
-        <source-file src="src/android/RBEWeservice.java" target-dir="br/com/pontosistemas/RBEWeservice" />
+        <source-file src="src/android/RBEWebservice.java" target-dir="br/com/pontosistemas/RBEWebservice" />
         
     </platform>
     
