@@ -20,13 +20,12 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="RBEWebservice">
-                <param name="android-package" value="br.com.pontosistemas.rbe.RBEWebservice"/>
+            <feature name="RBEWebservice" >
+                <param name="android-package" value="br.com.pontosistemas.webservice.RBEWebservice"/>
             </feature>
         </config-file>
-        
-        <source-file src="src/android/RBEWebservice.java" target-dir="br/com/pontosistemas/rbe" />
-        
+
+        <source-file src="src/android/RBEWebservice.java" target-dir="src/br/com/pontosistemas/webservice" />
     </platform>
     
     <!-- ios -->
