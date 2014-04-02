@@ -1,20 +1,14 @@
 package br.com.pontosistemas.webservice;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Environment;
 import android.util.Log;
 
 
@@ -150,20 +144,19 @@ public class RBEWebservice extends CordovaPlugin {
 	    
 	 public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 	      super.initialize(cordova, webView);
-	      Device.uuid = getUuid();
 	  }
 
-	public PluginResult execute(String action, JSONArray data, CallbackContext callbackContext) {
+	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 		Log.d("Hello Plugin", "Hello, this is a native function called on javascript function");
 		
 		if (NATIVE_ACTION_STRING.equals(action)){
-			
 		    JSONObject r = new JSONObject();
-	            r.put("retorno", "Doidoo");
-	            callbackContext.success(r);
-
+            r.put("retorno", "Doidoo");
+            callbackContext.success(r);
+            
+	        return true;
 		}
 		
-		return null;
+		return false;
 	}
 }
