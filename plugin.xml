@@ -16,6 +16,9 @@
         <clobbers target="webservice" />
     </js-module>-->
     
+    <js-module src="www/webservice.js" name="Webservice">
+        <clobbers target="window.webservice" />
+    </js-module>
 
     <!-- android -->
 	<platform name="android">
