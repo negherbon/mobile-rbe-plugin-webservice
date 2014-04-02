@@ -1,45 +1,27 @@
-cordova.define("cordova/rbe/webservice", function(require, exports, module){
+var webservice = {
 
-    var exec = cordova.require('cordova/exec');
-    
-    function greet(win, fail){
-        exec(win, fail, "RBEWebservice", "webservice", []);
-    }
-               
-    module.exports = {
-        greet: greet
-    }
-               
-               
-});
-/*
-window.RBEWebservice = function (str, callback){
-    
-    cordova.exec(callback, function(err) { callback('Nothing to echo.');
-                        }, "RBEWebservice", "webservice", [str]);
-    
-    
-     callWebservice: function(){
-     // So chama se houver comunicacao
-     if (RBEWebservice.hasConnection){
-     
-     }
+     callWebservice: function(successCallback, errorCallback){
+         alert("sem conexao");
+         // So chama se houver comunicacao
+         if (webservice.hasConnection){
+             alert("Com conexao");
+             //cordova.exec(webservice.webserviceSuccess, webservice.webserviceFail, "RBEWebservice", "webservice", []);
+             cordova.exec(successCallback, errorCallback, "RBEWebservice", "nativeAction", []);
+         }
+         
+         //cordova.exec(webservice.dataSuccess, webservice.dataFail, "RBEWebservice", "getData", []);
+         
      },
      hasConnection: function(){
-     var networkState = navigator.network.connection.type;
+         var networkState = navigator.network.connection.type;
      
-     // Se tiver conexao
-     if  (networkState!=Connection.NONE && networkState==Connection.UNKNOWN){
-     return true;
+         // Se tiver conexao
+         if  (networkState!=Connection.NONE && networkState==Connection.UNKNOWN){
+             return true;
+         }
+     
+         return false;
      }
-     
-     return false;
-     },
-     webserviceSuccess: function(){
-     
-     },
-     webserviceFail: function(){
-     
-     }
-    
-};*/
+};
+
+module.exports = webservice;
