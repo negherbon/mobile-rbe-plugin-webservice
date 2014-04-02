@@ -1,4 +1,4 @@
-package br.com.pontosistemas.rbe;
+package br.com.pontosistemas.webservice;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
