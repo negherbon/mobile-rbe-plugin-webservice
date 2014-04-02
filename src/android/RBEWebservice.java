@@ -1,5 +1,12 @@
 package br.com.pontosistemas.webservice;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -9,7 +16,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
+
+import com.squareup.okhttp.internal.Util;
 
 
 public class RBEWebservice extends CordovaPlugin {
@@ -22,7 +36,7 @@ public class RBEWebservice extends CordovaPlugin {
 		
 	}
 	
-	/*public void getDataSaveFile() {
+	/*public void getDataSaveFile(CordovaInterface activity) {
 
 		new AsyncTask<String, Void, JSONObject>() {
 			JSONObject jsonItem;
@@ -47,17 +61,15 @@ public class RBEWebservice extends CordovaPlugin {
 			protected void onPostExecute(JSONObject jsonData) {
 				super.onPostExecute(jsonData);
 				try {
-
-					writeFileInternalStorage(jsonData.toString(),
-							Util.activity.getApplicationContext(), "rbe.json");
+					writeFileInternalStorage(jsonData.toString(), activity.getActivity().getApplicationContext(), "rbe.json");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		}.execute();
 	}
-
-	public static boolean isSdReadable() {
+	*/
+	public boolean isSdReadable() {
 
 		boolean mExternalStorageAvailable = false;
 		try {
@@ -77,8 +89,8 @@ public class RBEWebservice extends CordovaPlugin {
 		}
 		return mExternalStorageAvailable;
 	}
-
-	public static void writeFileInternalStorage(String strWrite,
+	/*
+	public void writeFileInternalStorage(String strWrite,
 			Context context, String fileName) {
 		try {
 			// Check if Storage is Readable
@@ -96,17 +108,17 @@ public class RBEWebservice extends CordovaPlugin {
 		} catch (Exception e) {
 			// Your Code
 		}
-	}
+	}*/
 
-	public static PluginResult readFileInternalStorage() {
+	public String readFileInternalStorage(CordovaInterface activity) {
+		
 		String stringToReturn = " ";
 		try {
 			if (isSdReadable()) // isSdReadable()e method is define at bottom of
 								// the post
 			{
 				// String sfilename = fileName;
-				InputStream inputStream = Util.activity.getApplicationContext()
-						.openFileInput("rbe");
+				InputStream inputStream = activity.getActivity().getApplicationContext().openFileInput("rbe");
 
 				if (inputStream != null) {
 					InputStreamReader inputStreamReader = new InputStreamReader(
@@ -128,11 +140,9 @@ public class RBEWebservice extends CordovaPlugin {
 		} catch (IOException e) {
 			Log.e("TAG", "Can not read file: " + e.toString());
 		}
-		PluginResult result = new PluginResult(PluginResult.Status.OK,
-				stringToReturn);
-
-		return result;
-	}*/
+	
+		return stringToReturn;
+	}
 	
 	 /**
 	     * Sets the context of the Command. This can then be used to do things like
@@ -143,6 +153,7 @@ public class RBEWebservice extends CordovaPlugin {
 	     */
 	    
 	 public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+	      Log.d("Inicializo", "Deu uma inicializada no bixo");
 	      super.initialize(cordova, webView);
 	  }
 
@@ -151,10 +162,10 @@ public class RBEWebservice extends CordovaPlugin {
 		
 		if (NATIVE_ACTION_STRING.equals(action)){
 		    JSONObject r = new JSONObject();
-            r.put("retorno", "Doidoo");
-            callbackContext.success(r);
+            	    r.put("retorno", "Doidoo");
+            	    callbackContext.success(r);
             
-	        return true;
+	            return true;
 		}
 		
 		return false;
