@@ -32,7 +32,7 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="RBEWebservice">
-                <param name="ios-package" value="RBEWebservice" />
+                <param name="ios-package" value="webservice" />
             </feature>
         </config-file>
 
