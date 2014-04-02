@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="br.com.pontosistemas.RBEWebservice"
+    id="br.com.pontosistemas.webservice"
     version="1.0.0">
     
     <name>RBE Webservice</name>
@@ -18,7 +18,7 @@
     
 
     <!-- android -->
-    <platform name="android">
+	<platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RBEWebservice" >
                 <param name="android-package" value="br.com.pontosistemas.webservice.RBEWebservice"/>
