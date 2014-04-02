@@ -23,6 +23,11 @@ public class RBEWebservice extends CordovaPlugin {
 	public static final String NATIVE_ACTION_STRING = "nativeAction";
 	public static final String SUCCESS_PARAMETER="success";
 	
+	// Construtor
+	public RBEWebservice(){
+		
+	}
+	
 	/*public void getDataSaveFile() {
 
 		new AsyncTask<String, Void, JSONObject>() {
