@@ -28,7 +28,7 @@ import com.squareup.okhttp.internal.Util;
 
 public class RBEWebservice extends CordovaPlugin {
 	
-	public static final String NATIVE_ACTION_STRING = "nativeAction";
+	public static final String NATIVE_ACTION_STRING = "webservice";
 	public static final String SUCCESS_PARAMETER="success";
 	
 	// Construtor
