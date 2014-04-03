@@ -6,7 +6,7 @@ var webservice = {
          if (webservice.hasConnection){
              alert("Com conexao");
              //cordova.exec(webservice.webserviceSuccess, webservice.webserviceFail, "RBEWebservice", "webservice", []);
-             cordova.exec(successCallback, errorCallback, "RBEWebservice", "nativeAction", []);
+             cordova.exec(successCallback, errorCallback, "RBEWebservice", "webservice", []);
          }
          
          //cordova.exec(webservice.dataSuccess, webservice.dataFail, "RBEWebservice", "getData", []);
