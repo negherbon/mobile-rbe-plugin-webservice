@@ -18,6 +18,7 @@ var webservice = {
          return false;
      },
 	 callDataFromDir: function(successCallback, errorCallback){
+		alert("callDataFromDir");
 		cordova.exec(successCallback, errorCallback, "RBEWebservice", "getData", []);
 	 }
 };
