@@ -24,4 +24,4 @@ var webservice = {
      }
 };
 
-//module.exports = webservice;
+module.exports = webservice;
