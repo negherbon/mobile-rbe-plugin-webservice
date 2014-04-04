@@ -32,6 +32,7 @@
 }
 
 - (void) getData:(CDVInvokedUrlCommand *)command{
+	NSLog(@"GetData");
     CDVPluginResult* pluginResult = nil;
     NSString* ret = [self getJsonDataFromDirectory:@"data.json"];
     // Monta a resposta para o javascript
